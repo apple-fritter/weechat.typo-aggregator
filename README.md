@@ -26,6 +26,34 @@ TSV file: The script writes misspelled words to a TSV (tab-separated values) fil
 
 Once you have all of these requirements installed, you can run the script in WeeChat by copying the script code into a file named "misspelled_words.py" in your WeeChat plugins directory (usually ~/.weechat/python/), and then loading the script in WeeChat using the /python load command.
 
+## Process Flowchart
+```
+.
+├── Initialize
+│   ├── Import modules
+│   ├── Set spellchecker dictionary
+│   └── Define process_message()
+├── Process Message
+│   ├── Extract username
+│   ├── Split message into words
+│   └── For each word:
+│       ├── If word is misspelled:
+│       │   ├── Assign word
+│       │   ├── Check if recorded
+│       │   │   ├── If found:
+│       │   │   │   ├── Set flag
+│       │   │   │   ├── Increment count
+│       │   │   │   └── Update row
+│       │   │   └── If not found:
+│       │   │       ├── Set flag
+│       │   │       └── Create new row
+├── Return
+│   └── Return weechat.WEECHAT_RC_OK
+└── Register and Connect
+    ├── Register script with weechat
+    ├── Connect to IRC channel
+    └── Hook print event
+```
 ## Potential use cases
 Here are some use cases where this script could be helpful:
 
