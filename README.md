@@ -1,4 +1,4 @@
-# weechat.typo-aggregator
+# Typo Monger
 This script is designed to run on the `WeeChat` IRC client and checks for spelling errors in messages sent by users in the IRC channel. It uses the `PyEnchant` library to check spelling and the csv module to record misspelled words in a TSV (tab-separated values) file.
 
 The `process_message()` function is called every time a message is sent to the IRC channel. It first extracts the username of the sender from the message prefix. Then it splits the message into words and checks each word for spelling errors using the dictionary.check() method provided by PyEnchant.
